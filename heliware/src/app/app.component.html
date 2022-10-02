@@ -1,0 +1,32 @@
+<h1 style="color: #2945a2">Heliware Assignment</h1>
+<div class="form-center">
+  <form [formGroup]="loginForm" (ngSubmit)="loginUser()">
+    <input
+      type="text"
+      placeholder="Name"
+      name="user"
+      formControlName="user"
+    /><br />
+    <span style="color: red" *ngIf="user && user.invalid && user.touched">
+      This is required field </span
+    ><br />
+    <input
+      type="password"
+      placeholder="Password"
+      name="password"
+      formControlName="password"
+    /><br /><span
+      style="color: red"
+      *ngIf="password && password.invalid && password.touched"
+    >
+      This is required field </span
+    ><br /><br />
+    <button
+      class="button-64"
+      [disabled]="loginForm.invalid"
+      value="Check" (click)="clickMethod()"
+    >
+      LogIn
+    </button>
+  </form>
+</div>
